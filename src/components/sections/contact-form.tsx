@@ -104,9 +104,14 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("submitting");
 
-    // Simulate submission — replace with real API endpoint
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
       setStatus("success");
     } catch {
       setStatus("error");
