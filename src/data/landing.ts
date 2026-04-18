@@ -131,12 +131,30 @@ export interface CaseStudiesData {
   studies: CaseStudy[];
 }
 
+export interface PortfolioItem {
+  name: string;
+  industry: string;
+  tagline: string;
+  engagement: "Pilot" | "Implementation" | "Ongoing" | "Audit";
+  result: string;
+  icon: string;
+  accentColor: "indigo" | "emerald" | "amber" | "rose" | "sky" | "violet";
+}
+
+export interface PortfolioData {
+  headline: string;
+  subheadline: string;
+  items: PortfolioItem[];
+  footnote: string;
+}
+
 // --- Data ---
 
 export const navItems: NavItem[] = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Services", href: "#platform" },
   { label: "Case Studies", href: "#case-studies" },
+  { label: "Portfolio", href: "#portfolio" },
   { label: "Resources", href: "/blog" },
 ];
 
@@ -503,4 +521,88 @@ export const caseStudiesData: CaseStudiesData = {
       icon: "HeartPulse",
     },
   ],
+};
+
+// --- Portfolio ---
+
+export const portfolioData: PortfolioData = {
+  headline: "Selected work.",
+  subheadline:
+    "A snapshot of recent engagements across fintech, e-commerce, healthtech, and developer tools. Names and details simplified for confidentiality.",
+  items: [
+    {
+      name: "Velora Pay",
+      industry: "Fintech",
+      tagline: "B2B payments platform",
+      engagement: "Implementation",
+      result: "62% coverage uplift",
+      icon: "CreditCard",
+      accentColor: "indigo",
+    },
+    {
+      name: "StackCart",
+      industry: "E-commerce",
+      tagline: "Headless commerce SaaS",
+      engagement: "Implementation",
+      result: "\u20ac340K/yr saved",
+      icon: "ShoppingBag",
+      accentColor: "emerald",
+    },
+    {
+      name: "CarelinkOS",
+      industry: "Healthtech",
+      tagline: "Clinical workflow platform",
+      engagement: "Audit",
+      result: "SOC 2 Type II passed",
+      icon: "Stethoscope",
+      accentColor: "rose",
+    },
+    {
+      name: "LoopFlow",
+      industry: "DevTools",
+      tagline: "CI/CD orchestration",
+      engagement: "Pilot",
+      result: "8\u202f→\u202f47 min runtime",
+      icon: "Workflow",
+      accentColor: "violet",
+    },
+    {
+      name: "Numa Trading",
+      industry: "Fintech",
+      tagline: "Algorithmic trading platform",
+      engagement: "Ongoing",
+      result: "Zero prod regressions",
+      icon: "TrendingUp",
+      accentColor: "amber",
+    },
+    {
+      name: "Beacon Analytics",
+      industry: "SaaS",
+      tagline: "Product analytics suite",
+      engagement: "Implementation",
+      result: "31\u202f→\u202f78% coverage",
+      icon: "BarChart3",
+      accentColor: "sky",
+    },
+    {
+      name: "Verde Marketplace",
+      industry: "E-commerce",
+      tagline: "B2B marketplace",
+      engagement: "Audit",
+      result: "12 critical bugs found",
+      icon: "Sprout",
+      accentColor: "emerald",
+    },
+    {
+      name: "PulseChart",
+      industry: "Healthtech",
+      tagline: "Patient monitoring SaaS",
+      engagement: "Implementation",
+      result: "HIPAA audit ready",
+      icon: "Activity",
+      accentColor: "rose",
+    },
+  ],
+  footnote:
+    "30+ engagements completed since 2024. Industry breakdown available on request.",
 };
